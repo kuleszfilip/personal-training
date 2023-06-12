@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col">
+        <h3>
+            PERSON DETAILS
+            <mat-icon class="float-end" (click)="close()">close</mat-icon>
+        </h3>
+        <p class="label">
+            Name: {{ person.name }}
+        </p>
+        <p class="label">
+            Forname: {{ person.forname }}
+        </p>
+        <p class="label">
+            Email: {{ person.email }}
+        </p>
+        <p class="label">
+            Phone: {{ person.phone }}
+        </p>
+        <p class="label">
+            Address: {{ person.address }}
+        </p>
+        <p class="label">
+            City: {{ person.city }}
+        </p>
+        <ul>
+            <li *ngFor="let visit of person.visits">
+                {{ visit.type }}
+            </li>
+        </ul>
+        <button mat-raised-button color="primary" class="fr" (click)="goToEditPerson()">
+            EDIT PERSON
+        </button>
+    </div>
+</div>

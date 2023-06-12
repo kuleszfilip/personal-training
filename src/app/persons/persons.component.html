@@ -1,0 +1,9 @@
+<div class="row person-container">
+    <div class="col-sm-4" *ngFor="let person of persons$ | async" (click)="showDetails(person)">
+        <app-person-card [person]="person"></app-person-card>
+    </div>
+</div>
+<button (click)="openNewPersonModal()" mat-fab color="accent" id="new-person-btn">
+    +
+</button>
+

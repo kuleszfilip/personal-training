@@ -1,0 +1,56 @@
+ {
+    "-LERFpJBFcPd9ucEd570": {
+      "name": "Filip",
+      "forname": "Kulesz",
+      "id": "RFF011",
+      "visits": [
+        {
+          "id": "1",
+          "type": "prywatna",
+          "date": "14-03-2018, 12:05",
+          "treatment": "masaż",
+          "nextVisit": "14-03-2018, 12:05"
+        },
+        {
+          "id": "2",
+          "type": "szpital",
+          "date": "14-03-2018, 12:05",
+          "treatment": "tejping",
+          "nextVisit": "14-03-2018, 12:05"
+        }
+      ],
+      "registrationTime": "14-03-2018, 12:05",
+      "city": "Wołów",
+      "address": "Wrzosowa 15",
+      "email": "kuleszfilip@gmail.com",
+      "phone": "693543760",
+      "regularPatient": true
+    },
+    "-LERFpJBFcPd9ucEd999": {
+        "name": "DUPA",
+        "forname": "Marynowa",
+        "id": "RFF011",
+        "visits": [
+          {
+            "id": "1",
+            "type": "prywatna",
+            "date": "14-03-2018, 12:05",
+            "treatment": "masaż",
+            "nextVisit": "14-03-2018, 12:05"
+          },
+          {
+            "id": "2",
+            "type": "szpital",
+            "date": "14-03-2018, 12:05",
+            "treatment": "tejping",
+            "nextVisit": "14-03-2018, 12:05"
+          }
+        ],
+        "registrationTime": "14-03-2018, 12:05",
+        "city": "Wołów",
+        "address": "Wrzosowa 15",
+        "email": "kuleszfilip@gmail.com",
+        "phone": "693543760",
+        "regularPatient": true
+      }
+  }

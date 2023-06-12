@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>New Person Creator</h2>
+<mat-dialog-content>
+    <app-person-form #personForm></app-person-form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="row">
+        <div class="col">
+            <button mat-raised-button mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="primary" [disabled]="personForm.form.invalid" (click)="createPerson()">Create</button>
+        </div>
+    </div>
+</mat-dialog-actions>

@@ -1,0 +1,113 @@
+<form [formGroup]="form">
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field>
+                <input matInput formControlName="name" placeholder="Name" #nameInput>
+                <mat-error *ngIf="f['name'].hasError('required')">Name is required</mat-error>
+                <mat-error *ngIf="f['name'].errors?.['maxlength']">Max length is 5</mat-error>
+                <mat-hint align="end"> {{ nameInput.value.length }} / 5</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field>
+                <input matInput formControlName="forname" placeholder="Forname">
+                <mat-error>Name is required</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field>
+                <input matInput formControlName="email" placeholder="Email">
+                <mat-error>Email is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field>
+                <input matInput formControlName="phone" placeholder="Phone">
+                <mat-error>Phone is required</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field>
+                <input matInput formControlName="address" placeholder="Address">
+
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field>
+                <input matInput formControlName="city" placeholder="City">
+                <mat-error>Name is required</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-checkbox formControlName="regularPatient">Regular Patient?</mat-checkbox>
+        </div>
+    </div>
+    <div formArrayName="visits" class="visit-container shadow"
+        *ngFor="let visitForm of visits.controls; index as index">
+        <div class="row visit-header">
+            <div class="col">
+                <span class="dupa">
+                    Visit - {{ index + 1 }}
+                </span>
+                <mat-icon class="float-end" (click)="removeVisit(index)">delete_forever</mat-icon>
+            </div>
+            <div [formGroup]="visitForm">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Choose a registration date</mat-label>
+                            <input matInput formControlName="date" [matDatepicker]="date">
+                            <mat-hint>DD/MM/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="date"></mat-datepicker-toggle>
+                            <mat-datepicker #date></mat-datepicker>                     
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-6">
+
+                        <mat-form-field>
+                            <mat-select formControlName="type" placeholder="Visit Type">
+                                <mat-option *ngFor="let type of visitTypes" [value]="type.value">
+                                    {{ type.label }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <mat-form-field>
+                        <mat-label>
+                            Treatment
+                        </mat-label>
+                        <textarea matInput formControlName="treatment" placeholder="Massage"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Choose date of next visit</mat-label>
+                            <input matInput formControlName="nextVisit" [matDatepicker]="nextVisit">
+                            <mat-hint>DD/MM/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="nextVisit"></mat-datepicker-toggle>
+                            <mat-datepicker #nextVisit></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button mat-raised-button color="primary" (click)="buildVisit()">Add new visit</button>
+        </div>
+    </div>
+
+</form>
