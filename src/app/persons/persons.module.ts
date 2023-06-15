@@ -19,10 +19,6 @@ import { PersonsRoutingModule } from './persons-routing.module';
     DetailsComponent,
     EditPersonComponent
   ],
-  entryComponents: [
-    NewPersonComponent,
-    DetailsComponent
-  ], 
   imports: [
     CommonModule,
     MaterialModule,
