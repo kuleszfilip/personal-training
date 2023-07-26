@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { LoginComponent } from './core/login/login.component';
-import { PersonsComponent } from './persons/persons.component';
-import { EditPersonComponent } from './persons/edit-person/edit-person.component';
 import { AuthGuard } from './core/services/auth.guard';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 

@@ -7,14 +7,15 @@ import { MaterialModule } from '../material/material.module';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { ImageMapComponent } from './image-map/image-map.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ImageMapComponent
   ],
   imports: [
     CommonModule,

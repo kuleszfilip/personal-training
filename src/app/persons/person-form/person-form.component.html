@@ -50,6 +50,7 @@
             <mat-checkbox formControlName="regularPatient">Regular Patient?</mat-checkbox>
         </div>
     </div>
+
     <div formArrayName="visits" class="visit-container shadow"
         *ngFor="let visitForm of visits.controls; index as index">
         <div class="row visit-header">
@@ -57,6 +58,13 @@
                 <span class="dupa">
                     Visit - {{ index + 1 }}
                 </span>
+                <div class="row">
+                    <h3 (click)="showImage = !showImage">My wonderful test</h3>
+                    <ng-container *ngIf="showImage">
+                        <image-map [src]="image" [coordinates]="coordinates" (onClick)="getClick($event)"
+                            canEdit="true"></image-map>
+                    </ng-container>
+                </div>
                 <mat-icon class="float-end" (click)="removeVisit(index)">delete_forever</mat-icon>
             </div>
             <div [formGroup]="visitForm">
@@ -67,7 +75,7 @@
                             <input matInput formControlName="date" [matDatepicker]="date">
                             <mat-hint>DD/MM/YYYY</mat-hint>
                             <mat-datepicker-toggle matIconSuffix [for]="date"></mat-datepicker-toggle>
-                            <mat-datepicker #date></mat-datepicker>                     
+                            <mat-datepicker #date></mat-datepicker>
                         </mat-form-field>
                     </div>
                     <div class="col-sm-6">

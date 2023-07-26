@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
+import { ImageMapCoordinate } from 'src/app/core/image-map/image-map-coordinate';
 import { Person, Visit } from 'src/app/model/person';
 
 @Component({
@@ -11,7 +12,17 @@ import { Person, Visit } from 'src/app/model/person';
 })
 export class PersonFormComponent {
   @Input() editMode = false;
-
+  image: string = 'https://image.shutterstock.com/image-vector/solar-system-sun-planets-vector-260nw-751091653.jpg'
+  showImage?: boolean = true;
+  coordinates: ImageMapCoordinate[] = [
+    {
+      name: 'dupa',
+      x: 0,
+      y: 0,
+      width: 300,
+      height: 100
+    }
+  ]
 
   visitTypes = [
     { label: 'Rehabilitacja', value: 'Rehabilitacja'},
@@ -24,7 +35,7 @@ export class PersonFormComponent {
   pipe = new DatePipe('en-US');
 
   changeFormat(new_Date : Date): string {
-    const changedFormat = this.pipe.transform(this.new_Date, 'dd/MM/YYYY');
+    const changedFormat = this.pipe.transform(new_Date, 'dd/MM/YYYY');
     return this.currentDate = changedFormat as string;  
   }
 
@@ -103,4 +114,7 @@ export class PersonFormComponent {
   //     visit: this.formBuilder.array([this.buildVisit()])
   //   })
   // }
+  getClick(coordinate: ImageMapCoordinate) {
+    console.log(`Clicked on ${coordinate.name}`) 
+   }
 }

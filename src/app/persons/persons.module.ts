@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { EditPersonComponent } from './edit-person/edit-person.component';
 import { PersonsRoutingModule } from './persons-routing.module';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PersonsRoutingModule } from './persons-routing.module';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    PersonsRoutingModule
+    PersonsRoutingModule,
+    CoreModule
   ],
   exports: [
     PersonsComponent
